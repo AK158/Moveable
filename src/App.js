@@ -1,38 +1,73 @@
 
-import React, { useRef, useState, useEffect, lazy } from 'react';
-import Moveable from "react-moveable";
+import React, { useState, useEffect, lazy, useRef } from 'react';
+
 import { Button, Modal } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css'
-import testIMG from "./testIMG.png"
-
+import CrossLine from './lineCross';
+import testRectanlge from "./testRectanlge";
+import ReactHlsPlayer from 'react-hls-player/dist';
+import testAudio from "./test-music.mp3"
 const MotionDetection = lazy(() => import("./motionDetection"))
+
 export default function App() {
   const [motionDetection, setMotionDetection] = useState(false)
-  const canvasRef = useRef();
+  const videoNode = useRef();
+  // const canvasRef = useRef();
 
-  const drawRectangle = () => {
-    const context = canvasRef.current.getContext("2d");
-    context.strokeStyle = "white";
-    context.lineWidth = 2;
-    context.backgroundColor = "red"
-    context.strokeRect(50, 30, 110, 90);
-    context.strokeRect(170, 65, 100, 80);
-  };
+  // const drawRectangle = () => {
+  //   const context = canvasRef.current.getContext("2d");
+  //   context.strokeStyle = "white";
+  //   context.lineWidth = 2;
+  //   context.backgroundColor = "red"
+  //   context.strokeRect(50, 30, 110, 90);
+  //   context.strokeRect(170, 65, 100, 80);
+  // };
 
+  // useEffect(() => {
+  //   drawRectangle();
+  // }, []);
   useEffect(() => {
-    drawRectangle();
-  }, []);
 
+  })
+  const test = () => {
+    const audioContext = new AudioContext();
+    const audioSource = audioContext.createBiquadFilter();
+    console.log(videoNode)
+    // const mediaElementSource = audioContext.createMediaElementSource(videoNode);
+    // const filter = audioContext.createBiquadFilter();
+    // filter.type = "notch";
+    // filter.frequency.value = 2000
+    // filter.Q.value = 200;
+    // mediaElementSource.connect(filter);
+    // filter.connect(audioContext.destination);
+
+    // audioSource.connect(filter);
+    // filter.connect(audioContext.destination);
+  }
   return (
     <div>
+      {/* <ReactHlsPlayer
+        src="http://10.21.68.175/videos/21/index.m3u8"
+        autoPlay={true}
+        controls={true}
+        ref={videoNode}
+        width="100%"
+      />,
+      <button
+        onClick={test}
+      >
+        ahsbdahsbdh
+      </button> */}
+      <testRectanlge />
       <Button onClick={() => {
         setMotionDetection(true)
       }} >
         open Motion Detection
       </Button>
+      {/* <NoiseSuppression /> */}
       <MotionDetection motionDetection={motionDetection} />
-      <Modal open={true} >
+      {/* <Modal open={true} >
         <canvas
           ref={canvasRef}
           style={{
@@ -41,7 +76,8 @@ export default function App() {
             background: "url('https://www.earthcam.com/cams/includes/image.php?logo=0&playbutton=0&s=1&img=qNvv42vqjNEKe80k0mCm0w%3D%3D')",
           }}
         />
-      </Modal>
+      </Modal> */}
+      {/* <CrossLine /> */}
     </div>
 
   )

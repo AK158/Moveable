@@ -189,12 +189,10 @@ export default class TestRectangle extends React.Component {
                             throttleDrag={0}
                             edge={false}
                             zoom={1}
-
                             onResize={this.onResize}
                             onScale={this.onScale}
                             onWarp={this.onWarp}
                             onPinch={this.onPinch}
-
                             onDragEnd={this.onEnd}
                             onScaleEnd={this.onEnd}
                             onResizeEnd={this.onEnd}
@@ -216,3 +214,13 @@ export default class TestRectangle extends React.Component {
         );
     }
 }
+
+
+
+
+// position: absolute;
+// display: block;
+// visibility: visible;
+// transform: translate3d(20px, 10px, 0px);
+// --zoom: 1;
+// --zoompx: 1px;

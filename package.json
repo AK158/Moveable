@@ -3,16 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@100mslive/hms-noise-suppression": "^0.7.1",
+    "@100mslive/hms-video-react": "^0.7.1",
+    "@100mslive/react-sdk": "^0.6.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.24.1",
+    "modern-audio": "^0.1.4",
     "moveable-helper": "^0.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.5",
+    "react-hls-player": "^3.0.7",
     "react-moveable": "^0.41.1",
     "react-scripts": "5.0.1",
     "scenejs": "^1.6.0",
+    "sox-stream": "^2.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
